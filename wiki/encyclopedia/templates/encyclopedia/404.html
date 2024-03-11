@@ -5,5 +5,8 @@
 {% endblock %}
 
 {% block body %}
-   We're sorry, but there is no article for '{{ topic }}'    
+   <h1>We're sorry,</h1>
+   <p>but there is no article for '{{ topic }}'</p>
+   <p>&nbsp;</p>
+   <strong>Why not <a href="{% url 'add' %}">create</a> one?</strong>
 {% endblock %}

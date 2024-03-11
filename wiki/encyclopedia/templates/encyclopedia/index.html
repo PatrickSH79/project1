@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Patrick`s Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>All Articles</h1>
+
+    <ul>
+        {% for entry in entries %}
+            <li><a href="{{ entry }}">{{ entry }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

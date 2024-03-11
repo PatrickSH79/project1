@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Search results for '{{ q }} ' - Patrick`s Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>Search results for '{{ q }}'</h1>
+
+    <ul>
+        {% for entry in entries %}
+            <li><a href="{{ entry }}">{{ entry }}</a></li>
+        {% empty %}
+            <strong>No article found! Why not <a href="{% url 'add' %}">create</a> one?</strong>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

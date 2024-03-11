@@ -1,0 +1,26 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    New article - Patrick`s Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>{% if action == "add" %}Add a new {% else %}Edit an {% endif %}article</h1>
+
+    <form name="new_article" action="/wiki/add" method="post">
+        <!--<input type="hidden" name="action" value="{{ action }}">-->
+        {% csrf_token %}
+        <table>
+        <tr style="display:{% if error == None %}none{% else %}block{% endif %};color:#f00;">
+            <th>Error:</th>
+            <td>{{ error }}</td>
+        </tr>
+         {{ form }} 
+        </table>
+        <br/><br/><input type="submit" value="{% if action == "add" %}Add new {% else %}Save {% endif %} article">
+    </form>
+
+    <p>&nbsp;</p>
+    <p>Need help? Visit <a href="https://guides.github.com/features/mastering-markdown/" target="_blank">Markdown guidelines</a> for styling tips.</p>
+
+{% endblock %}

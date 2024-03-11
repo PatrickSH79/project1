@@ -1,0 +1,12 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ title }} - Patrick`s Encyclopedia
+{% endblock %}
+
+{% block body %}
+   {{ article|safe }}
+   
+   <p>&nbsp;</p>
+   <h8><a href="{{ request.path }}/edit">Edit article</a></h8>
+{% endblock %}

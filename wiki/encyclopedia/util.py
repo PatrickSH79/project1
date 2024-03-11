@@ -3,7 +3,6 @@ import random
 
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
-from views import NewArticleForm
 
 def list_entries():
     """
